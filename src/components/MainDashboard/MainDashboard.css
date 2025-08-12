@@ -1,0 +1,138 @@
+/* App.css */
+
+/* General page setup */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Background image with overlay */
+.background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(17, 24, 39, 0.8); /* gray-900 with opacity */
+}
+
+/* Main container */
+.content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 80rem;
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #d1d5db;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1600px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); /* green glow */
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 0.75rem;
+}
+
+.card-content {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  min-height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carbon Credits Text */
+.card-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+}
+
+.card-label {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 1.5rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
