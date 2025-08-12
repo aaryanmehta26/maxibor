@@ -34,7 +34,7 @@ const App = () => {
 
       <div className="content">
         <header>
-          <h1>Maxibor Methane Monitoring Dashboard</h1>
+          <h1>Methane Minter</h1>
           <p>
             Visualizing emissions data and mitigation progress from HDD coal
             mine operations.
