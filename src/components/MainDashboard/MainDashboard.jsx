@@ -17,6 +17,7 @@ const App = () => {
   const gradioLink = process.env.NEXT_PUBLIC_GRADIO_URL;
 
   console.log("$$$$$", gradioLink);
+  console.log("$$$$$ 33", powerBiEmbedUrl);
 
   const [isMapLoading, setIsMapLoading] = useState(true);
 
@@ -47,7 +48,12 @@ const App = () => {
 
         <div className="dashboard-grid">
           {/* Interactive Dashboard */}
-          <div className="card" onClick={() => window.open(powerBiEmbedUrl)}>
+          <a
+            className="card block cursor-pointer"
+            href={powerBiEmbedUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="card-header">
               <TrendingUp color="#4ade80" size={32} />
               <h2>Interactive Dashboard</h2>
@@ -58,16 +64,22 @@ const App = () => {
                 className="w-full h-full"
                 src={powerBiEmbedUrl}
                 allowFullScreen
+                style={{ pointerEvents: "none" }}
               ></iframe>
             </div>
             <p style={{ color: "#d1d5db", fontSize: "0.875rem" }}>
               Interactive Power BI dashboard for historical methane emission
               data.
             </p>
-          </div>
+          </a>
 
           {/* Methane Trends */}
-          <div className="card">
+          <a
+            className="card block cursor-pointer"
+            href={gradioLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="card-header">
               <TrendingUp color="#4ade80" size={32} />
               <h2>Methane Emission Trends</h2>
@@ -77,13 +89,12 @@ const App = () => {
                 src={MethanePrediction.src}
                 alt="Methane Emission Trends"
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                onClick={() => window.open(gradioLink, "_blank")}
               />
             </div>
             <p style={{ color: "#d1d5db", fontSize: "0.875rem" }}>
               Predictive analytics on historical methane emission data.
             </p>
-          </div>
+          </a>
 
           {/* Carbon Credits */}
           <div className="card" style={{ textAlign: "center" }}>
