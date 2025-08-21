@@ -14,6 +14,10 @@ const App = () => {
   const powerBiEmbedUrl =
     "https://app.powerbi.com/reportEmbed?reportId=29902af0-8c2b-455e-8490-df132a72f75d&autoAuth=true&ctid=66e44254-c0ce-4745-9255-907eee03faf6";
 
+  const gradioLink = process.env.NEXT_PUBLIC_GRADIO_URL;
+
+  console.log("$$$$$", gradioLink);
+
   const [isMapLoading, setIsMapLoading] = useState(true);
 
   useEffect(() => {
@@ -73,6 +77,7 @@ const App = () => {
                 src={MethanePrediction.src}
                 alt="Methane Emission Trends"
                 style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                onClick={() => window.open(gradioLink, "_blank")}
               />
             </div>
             <p style={{ color: "#d1d5db", fontSize: "0.875rem" }}>
